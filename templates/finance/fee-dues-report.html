@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Fee Dues Report</h1>
+<br>
+    <table class="table">
+        <tr>
+            <th>Admn No</th>
+            <th>Student Name</th>
+            <th>Class</th>
+            <th>Total Fee</th>
+            <th>Fee Paid</th>
+            <th>Fee Due</th>
+            <th>Contact</th>
+        </tr>
+        {% for account in feeaccounts %}
+        <tr>
+            <td>{{account.student.admission_number}}</td>
+            <td>{{account.student.name}}</td>
+            <td>{{account.student.class_name}}</td>
+            <td>{{account.totalfee}}</td>
+            <td>{{account.feepaid}}</td>
+            <td>{{account.feedue}}</td>
+            <td>{{account.student.contact}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    {% csrf_token %}
+
+{% endblock %}

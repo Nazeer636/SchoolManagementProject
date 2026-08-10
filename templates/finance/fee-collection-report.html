@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Fee Collection Report</h1>
+<br>
+    <table class="table">
+        <tr>
+            <th>Admn No</th>
+            <th>Student Name</th>
+            <th>Class</th>
+            <th>Payment Date</th>
+            <th>Amount</th>
+            <th>Receipt No</th>
+            <th>Payment Mode</th>
+        </tr>
+        {% for payment in feepayments %}
+        <tr>
+            <td>{{payment.student_fee_account.student.admission_number}}</td>
+            <td>{{payment.student_fee_account.student.name}}</td>
+            <td>{{payment.student_fee_account.student.class_name}}</td>
+             <td>{{ payment.payment_date|date:"M d,Y" }}</td>
+            <td>{{payment.amount}}</td>
+            <td>{{payment.id}}</td>
+            <td>{{payment.payment_mode}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    {% csrf_token %}
+
+{% endblock %}

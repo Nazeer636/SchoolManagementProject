@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> Dear {{username}}, Check Admissions Report of {{totalstudents}} students</h1>
+<br>
+    <table class="table">
+        <tr>
+            <th>Admn No</th>
+            <th>Student Name</th>
+            <th>Class</th>
+            <th>Father Name</th>
+            <th>Contact</th>
+            <th>Actions</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{student.admission_number}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.class_name}}</td>
+            <td>{{student.father_name}}</td>
+            <td>{{student.contact}}</td>
+            <td>
+               <a href="/admissions/updatestudent/{{student.id}}">
+                <button style="background-color: green;color:white">
+                    Update
+                </button></a>
+            </td>
+             <td>
+               <a href="/admissions/deletestudent/{{student.id}}">
+                <button style="background-color: green;color:white">
+                    Delete
+                </button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    {% csrf_token %}
+
+{% endblock %}

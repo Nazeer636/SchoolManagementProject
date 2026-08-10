@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+    <br><br>
+ 
+    <h1> Little stars school </h1><br>
+    <br>
+    <h3>Fee Receipt</h3>
+    <table class="table">
+        <tr>
+            <th>Receipt No:</th>
+            <td>{{feepayment.id}}</td>
+        </tr>
+
+          <tr>
+            <th>Student Name:</th>
+            <td>{{feeaccount.student.name}}</td>
+        </tr>
+
+         <tr>
+            <th>Amount Paid:</th>
+            <td>{{feepayment.amount}}</td>
+        </tr>
+
+        <tr>
+            <th>Date:</th>
+            <td>{{feepayment.payment_date|date:"M d,Y"}}</td>
+        </tr>
+
+    </table>
+
+    <a href="/finance/feereceipt/{{feepayment.id}}"><button>Generate Pdf</button></a>
+ {% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Certificate Request List</h1>
+<br>
+    <table class="table">
+        <tr>
+            <th>Admn No</th>
+            <th>Student Name</th>
+            <th>Class</th>
+            <th>Type</th>
+            <th>Reason</th>
+            <th>Request date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for request in requests %}
+        <tr>
+            <td>{{request.student.admission_number}}</td>
+            <td>{{request.student.name}}</td>
+            <td>{{request.student.class_name}}</td>
+            <td>{{request.type}}</td>
+            <td>{{request.reason}}</td>
+            <td>{{request.request_date|date:"M d,Y"}}</td>
+            <td>{{request.status}}</td>
+            <td>
+               <a href="/office/updatecertificaterequest/{{request.id}}">
+                <button style="background-color: green;color:white">
+                    Update
+                </button></a>
+            </td>
+             <td>
+               <a href="/office/deletecertificaterequest/{{request.id}}">
+                <button style="background-color: green;color:white">
+                    Delete
+                </button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    {% csrf_token %}
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+    <br><br>
+ 
+    <h1> Dear {{username}}, Welcome to Little Stars school </h1><br>
+    <br>
+    <div class="row mb-5">
+        <div class="col card m-0 p-0 text-white text-center">
+            <div class="card-body bg-primary h3">Total Students:<br><br>{{totalstudents}}</div>
+        </div>
+
+        <div class="col card m-0 p-0 text-white text-center">
+            <div class="card-body bg-secondary h3">Fee Collected:<br><br>{{feecollected}}</div>
+        </div>
+
+        <div class="col card m-0 p-0 text-white text-center">
+            <div class="card-body bg-warning h3">Total Dues:<br><br>{{feeduetotal}}</div>
+        </div>
+
+        <div class="col card m-0 p-0 text-white text-center">
+            <div class="card-body bg-success h3"> Absentees:<br><br>15</div>
+        </div>
+    </div>
+    <h3>Admissions</h3><br>
+    <a href="/admissions/addacademicyear"><button>Add Academic Year</button></a>
+    <a href="/admissions/addadmission"><button>Add Admission</button></a>
+    <a href="/admissions/admissionsreport"><button>Admissions Report</button></a>
+    <br><br>
+    <h3>Finance</h3><br>
+    <a href="/finance/setfeestructure"><button>Set Fee Structure</button></a>
+    <a href="/finance/collectfee"><button>Collect Fee</button></a>
+    <a href="/finance/feeduesreport"><button>Fee Dues Report</button></a>
+    <a href="/finance/feecollectionreport"><button>Fee Collection Report</button></a>
+    <br><br>
+
+    <h3>Office</h3><br>
+    <a href="/office/createcertificaterequest"><button>Create Certificate Request</button></a>
+    <a href="/office/certificaterequestlist"><button>Certificate Request List</button></a>
+    <br><br>
+
+    <h3>Academics</h3><br>
+    <a href="/academics/insertmarks"><button>Insert marks</button></a>
+    <a href="/academics/displaymarks"><button>Display marks</button></a>
+ {% endblock %}

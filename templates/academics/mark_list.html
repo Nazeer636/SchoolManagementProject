@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Marks Report</h1>
+<br>
+    <table class="table">
+        <tr>
+            <th>Admn No</th>
+            <th>Student Name</th>
+            <th>Subject</th>
+            <th>Marks Obtained</th>
+            <th>Total Marks</th>
+            <th>Actions</th>
+        </tr>
+        {% for mark in mark_list %}
+        <tr>
+            <td><a href="/academics/markdetails/{{mark.id}}">{{mark.student.admission_number}}</td></a>
+            <td>{{mark.student.name}}</td>
+            <td>{{mark.subject}}</td>
+            <td>{{mark.marks_obtained}}</td>
+            <td>{{mark.total_marks}}</td>
+            <td>
+               <a href="/academics/updatemarks/{{mark.id}}">
+                <button style="background-color: green;color:white">
+                    Update
+                </button></a>
+            </td>
+             <td>
+               <a href="/academics/deletemarks/{{mark.id}}">
+                <button style="background-color: green;color:white">
+                    Delete
+                </button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    {% csrf_token %}
+
+{% endblock %}

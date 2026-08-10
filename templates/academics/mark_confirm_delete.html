@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Marks Entry Form</h1>
+<br>
+<form method="POST" class="form">
+    Are you sure to delete this record ?
+    <button type="submit" class="btn btn-primary">Confirm</button>
+    {% csrf_token %}
+</form>
+<div class="text-center">
+<a href="/academics/displaymarks" class="btn btn-primary"><button type="button">Cancel</button></a>
+</div>
+{% endblock %}
