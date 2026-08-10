@@ -28,7 +28,7 @@ def show_fee_receipt(request,rcptno):
     image=BytesIO(urllib.request.urlopen(url).read())
     logo=ImageReader(image)
     pdffile.drawImage(logo, 220, 770, width=120, height=50)
-    pdffile.drawString(250,750,"FEE RECEIPT")
+    pdffile.drawString(250,750," Twg FEE RECEIPT")
     pdffile.drawString(150,700,f"Receipt No :{rcptno}")
     pdffile.drawString(150,670,f"Student Name :{studentname}")
     pdffile.drawString(150,640,f"Class :{classname}")
