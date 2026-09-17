@@ -1,44 +1,129 @@
 {% extends 'base.html' %}
+
 {% block content %}
-    <br><br>
- 
-    <h1> Dear {{username}}, Welcome to Little Stars school </h1><br>
-    <br>
-    <div class="row mb-5">
-        <div class="col card m-0 p-0 text-white text-center">
-            <div class="card-body bg-primary h3">Total Students:<br><br>{{totalstudents}}</div>
+
+<div class="dashboard">
+
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <h1>Welcome to Little Stars School</h1>
+        <p>Dear <strong>{{username}}</strong>, welcome to your school management dashboard.</p>
+    </div>
+
+
+    <!-- Statistics -->
+    <div class="dashboard-cards">
+
+        <div class="dashboard-card students-card">
+            <div class="card-icon">👨‍🎓</div>
+            <div>
+                <h4>Total Students</h4>
+                <div class="card-value">{{totalstudents}}</div>
+            </div>
         </div>
 
-        <div class="col card m-0 p-0 text-white text-center">
-            <div class="card-body bg-secondary h3">Fee Collected:<br><br>{{feecollected}}</div>
+        <div class="dashboard-card fees-card">
+            <div class="card-icon">💰</div>
+            <div>
+                <h4>Fee Collected</h4>
+                <div class="card-value">{{feecollected}}</div>
+            </div>
         </div>
 
-        <div class="col card m-0 p-0 text-white text-center">
-            <div class="card-body bg-warning h3">Total Dues:<br><br>{{feeduetotal}}</div>
+        <div class="dashboard-card dues-card">
+            <div class="card-icon">📋</div>
+            <div>
+                <h4>Total Dues</h4>
+                <div class="card-value">{{feeduetotal}}</div>
+            </div>
         </div>
 
-        <div class="col card m-0 p-0 text-white text-center">
-            <div class="card-body bg-success h3"> Absentees:<br><br>15</div>
+        <div class="dashboard-card attendance-card">
+            <div class="card-icon">📅</div>
+            <div>
+                <h4>Absentees</h4>
+                <div class="card-value">15</div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Admissions -->
+    <div class="dashboard-section">
+        <h3>Admissions</h3>
+
+        <div class="action-buttons">
+            <a href="/admissions/addacademicyear">
+                <button>Add Academic Year</button>
+            </a>
+
+            <a href="/admissions/addadmission">
+                <button>Add Admission</button>
+            </a>
+
+            <a href="/admissions/admissionsreport">
+                <button>Admissions Report</button>
+            </a>
         </div>
     </div>
-    <h3>Admissions</h3><br>
-    <a href="/admissions/addacademicyear"><button>Add Academic Year</button></a>
-    <a href="/admissions/addadmission"><button>Add Admission</button></a>
-    <a href="/admissions/admissionsreport"><button>Admissions Report</button></a>
-    <br><br>
-    <h3>Finance</h3><br>
-    <a href="/finance/setfeestructure"><button>Set Fee Structure</button></a>
-    <a href="/finance/collectfee"><button>Collect Fee</button></a>
-    <a href="/finance/feeduesreport"><button>Fee Dues Report</button></a>
-    <a href="/finance/feecollectionreport"><button>Fee Collection Report</button></a>
-    <br><br>
 
-    <h3>Office</h3><br>
-    <a href="/office/createcertificaterequest"><button>Create Certificate Request</button></a>
-    <a href="/office/certificaterequestlist"><button>Certificate Request List</button></a>
-    <br><br>
 
-    <h3>Academics</h3><br>
-    <a href="/academics/insertmarks"><button>Insert marks</button></a>
-    <a href="/academics/displaymarks"><button>Display marks</button></a>
- {% endblock %}
+    <!-- Finance -->
+    <div class="dashboard-section">
+        <h3>Finance</h3>
+
+        <div class="action-buttons">
+            <a href="/finance/setfeestructure">
+                <button>Set Fee Structure</button>
+            </a>
+
+            <a href="/finance/collectfee">
+                <button>Collect Fee</button>
+            </a>
+
+            <a href="/finance/feeduesreport">
+                <button>Fee Dues Report</button>
+            </a>
+
+            <a href="/finance/feecollectionreport">
+                <button>Fee Collection Report</button>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Office -->
+    <div class="dashboard-section">
+        <h3>Office</h3>
+
+        <div class="action-buttons">
+            <a href="/office/createcertificaterequest">
+                <button>Create Certificate Request</button>
+            </a>
+
+            <a href="/office/certificaterequestlist">
+                <button>Certificate Request List</button>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Academics -->
+    <div class="dashboard-section">
+        <h3>Academics</h3>
+
+        <div class="action-buttons">
+            <a href="/academics/insertmarks">
+                <button>Insert Marks</button>
+            </a>
+
+            <a href="/academics/displaymarks">
+                <button>Display Marks</button>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
