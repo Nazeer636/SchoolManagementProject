@@ -6,33 +6,35 @@
 
     <!-- Welcome Section -->
     <div class="welcome-section">
-        <h1>Welcome to Little Stars School</h1>
-        <p>Dear <strong>{{username}}</strong>, welcome to your school management dashboard.</p>
+        <div>
+            <h1>Welcome to Little Stars School</h1>
+            <p>Dear <strong>{{username}}</strong>, welcome to your school management dashboard.</p>
+        </div>
     </div>
 
 
-    <!-- Statistics -->
+    <!-- Statistics Cards -->
     <div class="dashboard-cards">
 
         <div class="dashboard-card students-card">
-            <div class="card-icon">👨‍🎓</div>
-            <div>
+            <div class="card-icon">🎓</div>
+            <div class="card-content">
                 <h4>Total Students</h4>
                 <div class="card-value">{{totalstudents}}</div>
             </div>
         </div>
 
         <div class="dashboard-card fees-card">
-            <div class="card-icon">💰</div>
-            <div>
+            <div class="card-icon">₹</div>
+            <div class="card-content">
                 <h4>Fee Collected</h4>
                 <div class="card-value">{{feecollected}}</div>
             </div>
         </div>
 
         <div class="dashboard-card dues-card">
-            <div class="card-icon">📋</div>
-            <div>
+            <div class="card-icon">📄</div>
+            <div class="card-content">
                 <h4>Total Dues</h4>
                 <div class="card-value">{{feeduetotal}}</div>
             </div>
@@ -40,7 +42,7 @@
 
         <div class="dashboard-card attendance-card">
             <div class="card-icon">📅</div>
-            <div>
+            <div class="card-content">
                 <h4>Absentees</h4>
                 <div class="card-value">15</div>
             </div>
@@ -50,78 +52,122 @@
 
 
     <!-- Admissions -->
-    <div class="dashboard-section">
-        <h3>Admissions</h3>
+    <div class="dashboard-section admissions-section">
+
+        <div class="section-info">
+            <div class="section-icon">🎓</div>
+
+            <div>
+                <h3>Admissions</h3>
+                <p>Manage academic years, student admissions and reports.</p>
+            </div>
+        </div>
 
         <div class="action-buttons">
+
             <a href="/admissions/addacademicyear">
-                <button>Add Academic Year</button>
+                <button class="btn-blue">📅 Add Academic Year</button>
             </a>
 
             <a href="/admissions/addadmission">
-                <button>Add Admission</button>
+                <button class="btn-dark-blue">👤 Add Admission</button>
             </a>
 
             <a href="/admissions/admissionsreport">
-                <button>Admissions Report</button>
+                <button class="btn-purple">📄 Admissions Report</button>
             </a>
+
         </div>
+
     </div>
 
 
     <!-- Finance -->
-    <div class="dashboard-section">
-        <h3>Finance</h3>
+    <div class="dashboard-section finance-section">
+
+        <div class="section-info">
+            <div class="section-icon">₹</div>
+
+            <div>
+                <h3>Finance</h3>
+                <p>Set fee structure, collect fees and view financial reports.</p>
+            </div>
+        </div>
 
         <div class="action-buttons">
+
             <a href="/finance/setfeestructure">
-                <button>Set Fee Structure</button>
+                <button class="btn-green">⚙ Set Fee Structure</button>
             </a>
 
             <a href="/finance/collectfee">
-                <button>Collect Fee</button>
+                <button class="btn-light-green">₹ Collect Fee</button>
             </a>
 
             <a href="/finance/feeduesreport">
-                <button>Fee Dues Report</button>
+                <button class="btn-teal">📄 Fee Dues Report</button>
             </a>
 
             <a href="/finance/feecollectionreport">
-                <button>Fee Collection Report</button>
+                <button class="btn-dark-teal">📊 Fee Collection Report</button>
             </a>
+
         </div>
+
     </div>
 
 
     <!-- Office -->
-    <div class="dashboard-section">
-        <h3>Office</h3>
+    <div class="dashboard-section office-section">
+
+        <div class="section-info">
+            <div class="section-icon">📄</div>
+
+            <div>
+                <h3>Office</h3>
+                <p>Create certificate requests and manage request lists.</p>
+            </div>
+        </div>
 
         <div class="action-buttons">
+
             <a href="/office/createcertificaterequest">
-                <button>Create Certificate Request</button>
+                <button class="btn-purple">⊕ Create Certificate Request</button>
             </a>
 
             <a href="/office/certificaterequestlist">
-                <button>Certificate Request List</button>
+                <button class="btn-dark-purple">☷ Certificate Request List</button>
             </a>
+
         </div>
+
     </div>
 
 
     <!-- Academics -->
-    <div class="dashboard-section">
-        <h3>Academics</h3>
+    <div class="dashboard-section academics-section">
+
+        <div class="section-info">
+            <div class="section-icon">📚</div>
+
+            <div>
+                <h3>Academics</h3>
+                <p>Insert marks and view student academic results.</p>
+            </div>
+        </div>
 
         <div class="action-buttons">
+
             <a href="/academics/insertmarks">
-                <button>Insert Marks</button>
+                <button class="btn-orange">✎ Insert Marks</button>
             </a>
 
             <a href="/academics/displaymarks">
-                <button>Display Marks</button>
+                <button class="btn-red-orange">📄 Display Marks</button>
             </a>
+
         </div>
+
     </div>
 
 </div>
